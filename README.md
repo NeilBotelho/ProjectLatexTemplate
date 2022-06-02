@@ -32,7 +32,7 @@ This function allows you to break up your document into separate sections(here c
 
 The \includeonly function is run once before the start of the actual document in report.tex. This specifies which chapters to ignore the compiled files for and always recompile. To speed up compilation, youll want to make sure that only the chapters you're currenty editing are mentioned in this function. \includeonly takes a comma separated list of files/chapters as arguements
 
-**Important**: If you are using the \includeonly function then \include does not compile chapters that do not have intermediate compiled files(.aux files). So run the compilation for the full document at least once with \includeonly commented out 
+**Important**: If you are using the \includeonly function then \include does not compile chapters that do not have intermediate compiled files(.aux files). So run the compilation for the full document at least once with \includeonly commented out. For safety, \includeonly has been commented out in report.tex but once you compile it once uncomment it and add only the chapters you're currently editing to it to see your changes when you recompile
 
 ## Citations
 The citations are made using bibtex. See [this tutorial]() for a detailed explanation. But essentially, you add all you're citations in a particular format(bibtex format), that is available on all the sites where you get papers, i.e. researchgate, arxiv etc. allow you to download bibtex files for citations. See my citations.bib file for reference. 
