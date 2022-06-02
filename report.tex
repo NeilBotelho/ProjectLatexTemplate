@@ -1,0 +1,109 @@
+% Preamble {{{
+\documentclass[12pt]{report}
+\usepackage[margin=1in]{geometry}
+\geometry{
+left=1.2in
+}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none
+]{biblatex}
+\addbibresource{citations.bib}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+		citecolor=black,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdfpagemode=FullScreen,
+    }
+
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+
+% Chapter title formatting
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}{\centering\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter} 
+  {0pt}{50pt}{40pt}
+
+% Recompile these documents. Do this if you're currently making changes to title and introcution chapters
+\includeonly{
+	chapters/title,
+	chapters/introduction,
+}
+% }}}
+
+\begin{document}
+
+\include{chapters/title}
+\include{chapters/approval2}
+\clearpage
+
+
+\center{\Large{\textbf{Abstract}}\\}
+	\vspace{2cm}
+	\justifying\small{In the age of streaming and on-demand media, there is an overabundance of content for users to consume. Hence discoverability of new media that is interesting to a user is a massive issue. The current solution is to use opaque algorithms to predict what the user may like. In this project we propose developing a more transparent alternative. This project aims to provide the user a new transparent method of content discovery based on emotions rather than keywords or genres. The user will be provided a set of sliders, each corresponding to a different emotion. Based on the user’s input via the sliders, we they will be recommended songs and movies that match using the system described in this project. } \cite{bert}
+\clearpage
+\tableofcontents
+\listoffigures
+
+
+\include{chapters/introduction}
+\include{chapters/literatureReview}
+\include{chapters/requirements}
+
+\chapter{Proposed Work}
+\section{Problem Statement}
+This project aims to provide the user a new transparent method of content discovery. The user will be provided a set of sliders, each corresponding to a different emotion. Based on the user’s input via the sliders, we will recommend songs and movies that match. \newline
+
+Since most of the content discovery systems provide searches based on the video name or song name a content discovery system based on emotions will help the user find desirable content and also help the user explore content which the user might not have come across.
+
+\section{Objectives}
+\begin{itemize}
+	\item To classify movies and songs along a set a emotions using subtitles and song content resp.
+	\item To automate addition of new movies and songs to the dataset via scraping for subtitles and song audio
+	\item To recommend movies and songs according to the kind of media the user wants to watch
+	\item To take into account preferences of other similar users when making a recommendation to a user
+\end{itemize}
+\include{chapters/design}
+
+\include{chapters/plannedImplementation}
+
+
+
+\chapter{Conclusion and Future Work}
+\section{Conclusion}
+%TODO
+We have finished the literature survey, application design and UI design. \newline
+
+The application we create will provide end users with a novel, transparent way of browsing and discovering new content.
+
+\section{Future Work}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{imgs/timeline.png}
+\caption{Timeline}
+\label{fig: timeline}
+\end{figure}
+Figure \ref{fig: timeline} shows the tentative project timeline. Beginning with requirements. We gathered information about what would be required to build the project between September and November. Our Design phase lasted till December.\newline
+We are using a CI/CD mode of development so Development and Deployment is being done side by side. This way if there are any incompatibilities  that arise during deployment we can catch and fix them.\newline
+In March we will begin data collection for the song recommender using the tool we showed you previously, once we collect around 200 data points we will begin developing the preprocessing pipelines and initial model tests. We will continue collecting data side by side with development as more data is always better.
+We expect to have a minimum viable product by May, so we will begin testing at that point.
+
+
+\printbibliography
+\end{document}
