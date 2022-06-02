@@ -20,8 +20,8 @@
 latexmk -pdf report.tex
 ```
 
-# Info about things
-# chapters
+# A couple notes for clarity
+## Chapters
 I've broken up the report into chapters(available in the chapters folder) for ease of access and for compilation speed(see next section)
 
 
