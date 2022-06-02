@@ -28,9 +28,11 @@ I've broken up the report into chapters(available in the chapters folder) for ea
 ## \includeonly and \include
 Since this is a pretty massive report with a lot if images, compiling it to a pdf takes like 1 minute which is kinda a long time to wait between seeing your changes. So LaTeX's solution to this is the \include function. 
 
-This function allows you to break up your document into separate sections(here chapters). The function takes one arguement, the path to the LaTeX file with the content of that chapter (without a preamble aka the \usepackage and \begindocument parts). This function checks if that chapter has been compiled already. If it has then it doesnt recompile it, it uses the already compiled version
+This function allows you to break up your document into separate sections(here chapters). The function takes one arguement, the path to the LaTeX file with the content of that chapter (without a preamble aka the \usepackage and \begindocument parts). This function uses the intermediate compiled files(.aux files) of that chapter instead of recompiling.
 
-The \includeonly function is run once before the start of the actual document in report.tex. This specifies which chapters to ignore the compiled files for and always recompile. To speed up compilation, youll want to make sure that only the chapter you're currenty editing is mentioned in this function>
+The \includeonly function is run once before the start of the actual document in report.tex. This specifies which chapters to ignore the compiled files for and always recompile. To speed up compilation, youll want to make sure that only the chapters you're currenty editing are mentioned in this function. \includeonly takes a comma separated list of files/chapters as arguements
+
+**Important**: If you are using the \includeonly function then \include does not compile chapters that do not have intermediate compiled files(.aux files). So run the compilation for the full document at least once with \includeonly commented out 
 
 ## Citations
 The citations are made using bibtex. See [this tutorial]() for a detailed explanation. But essentially, you add all you're citations in a particular format(bibtex format), that is available on all the sites where you get papers, i.e. researchgate, arxiv etc. allow you to download bibtex files for citations. See my citations.bib file for reference. 
