@@ -9,4 +9,5 @@
 *.aux
 *.bbl
 *.bcf
+*.fdb_latexmk
 *.blg
