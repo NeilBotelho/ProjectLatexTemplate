@@ -35,7 +35,7 @@ The \includeonly function is run once before the start of the actual document in
 **Important**: If you are using the \includeonly function then \include does not compile chapters that do not have intermediate compiled files(.aux files). So run the compilation for the full document at least once with \includeonly commented out. For safety, \includeonly has been commented out in report.tex but once you compile it once uncomment it and add only the chapters you're currently editing to it to see your changes when you recompile
 
 ## Citations
-The citations are made using bibtex. See [this tutorial]() for a detailed explanation. But essentially, you add all you're citations in a particular format(bibtex format), that is available on all the sites where you get papers, i.e. researchgate, arxiv etc. allow you to download bibtex files for citations. See my citations.bib file for reference. 
+The citations are made using bibtex. See [this tutorial](https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex) for a detailed explanation. But essentially, you add all you're citations in a particular format(bibtex format), that is available on all the sites where you get papers, i.e. researchgate, arxiv etc. allow you to download bibtex files for citations. See my citations.bib file for reference. 
 
 The first thing after the @ is the type of document it is, i.e. article/ paper published in proceedings/ book / collection etc. After the open curly braces is the name you will use to refer to that citation. If you refer to any chapter where I made a citation you will note the \cite function that mentions one of these names. Latex then automatically cites these papers and orders them for you. 
 
